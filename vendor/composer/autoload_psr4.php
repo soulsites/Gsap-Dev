@@ -6,6 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'GsapDev\\' => array($baseDir . '/src'),
     'Carbon_Fields\\' => array($vendorDir . '/htmlburger/carbon-fields/core'),
-    'BasicWpPlugin\\' => array($baseDir . '/src'),
 );

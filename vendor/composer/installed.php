@@ -3,7 +3,7 @@
         'name' => 'vendor/basic-wp-plugin',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '2b7d9270e86fe1aef1aa2dc70783f41565f8098c',
+        'reference' => 'a7b1bf45ac2e03103a6a7dbd2f5fd44d4643b4f8',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'vendor/basic-wp-plugin' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '2b7d9270e86fe1aef1aa2dc70783f41565f8098c',
+            'reference' => 'a7b1bf45ac2e03103a6a7dbd2f5fd44d4643b4f8',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

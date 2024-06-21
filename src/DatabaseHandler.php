@@ -1,6 +1,6 @@
 <?php
 
-namespace BasicWpPlugin;
+namespace GsapDev;
 
 class DatabaseHandler {
     const TABLE_NAME = 'your_custom_table';

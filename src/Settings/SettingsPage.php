@@ -1,6 +1,6 @@
 <?php
 
-namespace BasicWpPlugin\Settings;
+namespace GsapDev\Settings;
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;

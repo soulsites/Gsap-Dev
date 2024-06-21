@@ -1,9 +1,9 @@
 <?php
 
-namespace BasicWpPlugin;
+namespace GsapDev;
 
-use BasicWpPlugin\Settings\SettingsPage;
-use BasicWpPlugin\DatabaseHandler;
+use GsapDev\Settings\SettingsPage;
+use GsapDev\DatabaseHandler;
 
 class Init {
 

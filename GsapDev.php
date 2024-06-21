@@ -8,8 +8,8 @@
 
 require_once plugin_dir_path(__FILE__) . 'vendor/autoload.php';
 
-use BasicWpPlugin\DatabaseHandler;
-use BasicWpPlugin\Init;
+use GsapDev\DatabaseHandler;
+use GsapDev\Init;
 
 /* Function to handle plugin activation -> activate if needed
 function basic_wp_plugin_activate() {
