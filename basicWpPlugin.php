@@ -1,26 +1,27 @@
 <?php
 /**
  * Plugin Name: Basic WP Plugin
- * Description: A standard WordPress plugin using Carbon Fields for settings
- * Version: 1.0.0
+ * Description: A basic WordPress plugin.
+ * Version: 1.0
  * Author: Your Name
- * Text Domain: basic-wp-plugin
  */
 
-if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly.
-}
+require_once plugin_dir_path(__FILE__) . 'vendor/autoload.php';
 
-// Autoload classes
-require_once __DIR__ . '/vendor/autoload.php';
-
-// Use namespaces
+use BasicWpPlugin\DatabaseHandler;
 use BasicWpPlugin\Init;
 
-// Initialize the plugin
-function run_basic_wp_plugin() {
-    $plugin = new Init();
-    $plugin->run();
+// Function to handle plugin activation
+function basic_wp_plugin_activate() {
+    $db_handler = new DatabaseHandler();
+    $db_handler->check_and_create_table();
+    add_option('basic_wp_plugin_db_created', true); // Set option for admin notice
 }
+register_activation_hook(__FILE__, 'basic_wp_plugin_activate');
 
-run_basic_wp_plugin();
+// Initialize the plugin
+function initialize_basic_wp_plugin() {
+    $init = new Init();
+    $init->run();
+}
+initialize_basic_wp_plugin();
