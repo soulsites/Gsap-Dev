@@ -1,0 +1,13 @@
+{
+  "name": "vendor/basic-wp-plugin",
+  "description": "A standard WordPress plugin using Carbon Fields for settings",
+  "type": "wordpress-plugin",
+  "require": {
+    "htmlburger/carbon-fields": "^3.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "BasicWpPlugin\\": "src/"
+    }
+  }
+}
