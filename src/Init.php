@@ -4,6 +4,7 @@ namespace GsapDev;
 
 use GsapDev\Settings\SettingsPage;
 use GsapDev\DatabaseHandler;
+use GsapDev\EnqueueScripts;
 
 class Init {
 
@@ -17,11 +18,12 @@ class Init {
     public function load_dependencies() {
         // Initialize Settings Page
         new SettingsPage();
+        new EnqueueScripts();
     }
 
     public function enqueue_public_assets() {
         wp_enqueue_style('basic-wp-plugin-public-styles', plugin_dir_url(dirname(__FILE__)) . 'src/Public/css/public-styles.css');
-        wp_enqueue_script('basic-wp-plugin-public-scripts', plugin_dir_url(dirname(__FILE__)) . 'src/Public/js/public-scripts.min.js', ['jquery'], null, true);
+        wp_enqueue_script('basic-wp-plugin-public-scripts', plugin_dir_url(dirname(__FILE__)) . 'src/Public/js/public-scripts.js', ['jquery'], null, true);
     }
 
     public function enqueue_admin_assets() {

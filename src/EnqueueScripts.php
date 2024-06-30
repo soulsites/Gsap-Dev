@@ -1,11 +1,8 @@
 <?php
 
-namespace GsapDev\Settings;
+namespace GsapDev;
 
-use Carbon_Fields\Container;
-use Carbon_Fields\Field;
-
-class SettingsPage {
+class EnqueueScripts {
     private $js_files = [
         'gsap.min.js',
         'CSSRulePlugin.min.js',
@@ -23,22 +20,22 @@ class SettingsPage {
     ];
 
     public function __construct() {
-        add_action('carbon_fields_register_fields', [$this, 'create_settings_page']);
-        add_action('after_setup_theme', [$this, 'load']);
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_selected_scripts']);
     }
 
-    public function load() {
-        \Carbon_Fields\Carbon_Fields::boot();
-    }
-
-    public function create_settings_page() {
-        $fields = [];
+    public function enqueue_selected_scripts() {
         foreach ($this->js_files as $file) {
             $field_name = 'crb_' . str_replace(['.', '-'], '_', strtolower($file));
-            $fields[] = Field::make('checkbox', $field_name, $file);
+            $option = carbon_get_theme_option($field_name);
+            if ($option) {
+                wp_enqueue_script(
+                    'gsapdev-' . $file,
+                    plugin_dir_url(dirname(__FILE__)) . 'src/Public/js/gsap/' . $file,
+                    array(),
+                    null,
+                    true
+                );
+            }
         }
-
-        Container::make('theme_options', __('Gsap Dev Plugin Settings', 'gsap-dev-plugin'))
-            ->add_fields($fields);
     }
 }

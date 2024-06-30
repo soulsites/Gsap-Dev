@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Basic WP Plugin
- * Description: A basic WordPress plugin.
+ * Plugin Name: Gsap Dev
+ * Description: Gsap Files
  * Version: 1.0
- * Author: Your Name
+ * Author: Christian Wedel
  */
 
 require_once plugin_dir_path(__FILE__) . 'vendor/autoload.php';
